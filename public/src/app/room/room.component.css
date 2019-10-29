@@ -1,0 +1,92 @@
+*{
+    /* border: 1px solid red; */
+    margin: 0;
+}
+
+.info{
+    color: orange;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+button{
+    width: 100px;
+}
+
+#container{
+    width: 98%;
+    margin: 0px auto;
+    padding: 30px;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+#container #topBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#container #deck{
+    width: 100%;
+    height: 78vh;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+app-card{
+    width: 31%;
+    /* cursor: pointer; */
+    position: relative;
+}
+
+/* app-card:hover{
+    top: -10px;
+    border: 6px solid orange;
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+} */
+
+#container #result{
+    text-align: center;
+    color: orange;
+    font-size: 40px;
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#container #deck form{
+    width: 40%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#container #deck form #submitBtn{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#container #bottomBar{
+    display: flex;
+    justify-content: space-between;
+}
+
+#container #bottomBar #actions{
+    display: flex;
+}
+
+#container #bottomBar #actions button{
+    margin-left: 10px;
+}

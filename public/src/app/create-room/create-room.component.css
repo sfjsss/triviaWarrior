@@ -1,0 +1,27 @@
+*{
+    /* border: 1px solid red; */
+}
+
+#container{
+    width: 40%;
+    margin: 30px auto;
+    padding: 30px;
+}
+
+form h3{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form p{
+    color: red;
+}
+
+form #createBtn{
+    display: flex;
+    justify-content: center;
+}
+
+form #createBtn button{
+    width: 100px;
+}

@@ -1,0 +1,57 @@
+<div id="container">
+    <div id="topBar">
+        <h3>Room Owner: <span class="info">{{ ownerName }}</span> | Score: <span class="info">{{ ownerScore }}</span></h3>
+        <h3>Challenger: <span class="info">{{ challengerName }}</span> | Score: <span class="info">{{ challengerScore }}</span></h3>
+    </div>
+    <div id="deck" *ngIf="status!='Game set'">
+        <form *ngIf="status=='waiting for players to select'" (submit)="selectCategory()">
+            <div class="form-group">
+                <label for="selectCategories">Select a category</label>
+                <select class="form-control" id="selectCategories" name="selectedCategory" [(ngModel)]="selectedCategory">
+                    <option value="9">General Knowledge</option>
+                    <option value="10">Entertainment: Books</option>
+                    <option value="11">Entertainment: Films</option>
+                    <option value="12">Entertainment: Music</option>
+                    <option value="13">Entertainment: Musical & Theatres</option>
+                    <option value="14">Entertainment: Television</option>
+                    <option value="15">Entertainment: Video Games</option>
+                    <option value="16">Entertainment: Board Games</option>
+                    <option value="29">Entertainment: Comics</option>
+                    <option value="31">Entertainment: Japanese Anime & Manga</option>
+                    <option value="32">Entertainment: Cartoons & Animations</option>
+                    <option value="17">Science & Nature</option>
+                    <option value="18">Science: computers</option>
+                    <option value="19">Science: Mathematics</option>
+                    <option value="30">Science: Gadgets</option>
+                    <option value="20">Mythology</option>
+                    <option value="21">Sports</option>
+                    <option value="22">Geography</option>
+                    <option value="23">History</option>
+                    <option value="24">Politics</option>
+                    <option value="25">Art</option>
+                    <option value="26">Celebrities</option>
+                    <option value="27">Animals</option>
+                    <option value="28">Vehicles</option>
+                </select>
+            </div>
+            <div class="form-group" id="submitBtn">
+                <button type="submit" class="btn btn-success">SELECT</button>
+            </div>
+        </form>
+        <app-card *ngFor="let card of cards" [cardInfo]="card" [roomName]="roomName" [flip]="card.flip" [ngClass]="{ 'hide': card.hide }" (click)="flipCard(card)"></app-card>
+    </div>
+    <h1 id="result" *ngIf="status=='Game set'">{{ winner }} won!</h1>
+    <div id="bottomBar">
+        <h3>Status: <span class="info">{{ status }}</span></h3>
+        <h3>Room: <span class="info">{{ roomName }}</span></h3>
+        <div id="actions">
+            <h3>Actions:</h3>
+            <button class="btn btn-danger" (click)="leaveRoom()">LEAVE</button>
+            <button class="btn btn-success" *ngIf="status == 'waiting for players to get ready' || status == 'waiting for you to get ready'" (click)="ready()">READY</button>
+            <button class="btn btn-warning" *ngIf="status == 'Game set'" (click)="rematch()">REMATCH</button>
+        </div>
+    </div>
+    
+</div>
+
+

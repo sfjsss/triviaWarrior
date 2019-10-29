@@ -1,0 +1,13 @@
+<div id="card" class="card">
+    <div id="points" *ngIf="!flip">
+        <h3 *ngIf="cardInfo.difficulty == 'easy'">100</h3>
+        <h3 *ngIf="cardInfo.difficulty == 'medium'">200</h3>
+        <h3 *ngIf="cardInfo.difficulty == 'hard'">300</h3>
+    </div>
+    <div id="question" *ngIf="flip">
+        <p [innerHTML]="cardInfo.question | safe" class="question"></p>
+        <ol>
+            <li *ngFor="let option of cardInfo.options"><p (click)="checkAnswer(option)" [innerHTML]="option | safe" class="option"></p></li>
+        </ol>
+    </div>
+</div>

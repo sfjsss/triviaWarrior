@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+}
+
+ol{
+    list-style-type: disc;
+}
+
+li:hover{
+    color: orange;
+}
+
+p.option:hover{
+    color: orange;
+    font-weight: bold;
+}
+
+#card{
+    height: 23vh;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+#card:hover{
+    top: -10px;
+    border: 6px solid orange;
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+#points{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#question{
+    height: 100%;
+    overflow: auto;
+}
+
+#question .question{
+    margin-bottom: 10px;
+}
+
+#question .option{
+    cursor: pointer;
+}
+

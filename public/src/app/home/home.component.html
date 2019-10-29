@@ -1,0 +1,10 @@
+<div id="container">
+    <h1>Welcome to Trivia Warrior</h1>
+    <p *ngIf="notification" class="notification">{{ notification }}</p>
+    <div id="buttons">
+        <button class="btn btn-warning btn-lg" (click)="createRoomFormInitialize()">Create Room</button>
+        <button class="btn btn-warning btn-lg" (click)="joinRoomFormInitialize()">Join Room</button>
+    </div>
+    <app-create-room *ngIf="createRoomFormShow"></app-create-room>
+    <app-join-room *ngIf="joinRoomFormShow"></app-join-room>
+</div>
