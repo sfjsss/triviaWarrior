@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class HttpService {
   
   socket: any;
-  readonly uri: string = "ws://localhost:8000";
+  readonly uri: string = "ws://54.188.92.131:8000";
 
   constructor() {
     this.socket = io(this.uri);
